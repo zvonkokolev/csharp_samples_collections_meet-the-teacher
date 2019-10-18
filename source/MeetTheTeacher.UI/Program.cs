@@ -27,7 +27,7 @@ namespace MeetTheTeacher.UI
             string[] ignoredNames = File.ReadAllLines(Path.Combine(pathToInputFiles, ignoredTeachersFileName), Encoding.UTF8);
 
             throw new NotImplementedException();
-
+            string html="<html></html>";
             File.WriteAllText(Path.Combine(pathToOutputFiles, resultFileName), html, Encoding.Default);
         }
     }
