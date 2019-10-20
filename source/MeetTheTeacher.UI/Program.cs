@@ -26,8 +26,11 @@ namespace MeetTheTeacher.UI
             string[] detailLines = File.ReadAllLines(Path.Combine(pathToInputFiles, detailsFileName), Encoding.UTF8);
             string[] ignoredNames = File.ReadAllLines(Path.Combine(pathToInputFiles, ignoredTeachersFileName), Encoding.UTF8);
 
-            throw new NotImplementedException();
+            Controller ctrl = new Controller(teacherLines, detailLines);
 
+            throw new NotImplementedException("Ausgabe lt. Angabe (siehe Screenshots) implementieren!");
+
+            string html = ctrl.GetHtmlTable();
             File.WriteAllText(Path.Combine(pathToOutputFiles, resultFileName), html, Encoding.Default);
         }
     }
