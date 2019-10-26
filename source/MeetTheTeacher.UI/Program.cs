@@ -28,7 +28,7 @@ namespace MeetTheTeacher.UI
 
             Controller ctrl = new Controller(teacherLines, detailLines);
 
-            throw new NotImplementedException("Ausgabe lt. Angabe (siehe Screenshots) implementieren!");
+            //throw new NotImplementedException("Ausgabe lt. Angabe (siehe Screenshots) implementieren!");
 
             string html = ctrl.GetHtmlTable();
             File.WriteAllText(Path.Combine(pathToOutputFiles, resultFileName), html, Encoding.Default);
