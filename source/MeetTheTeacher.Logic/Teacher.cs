@@ -39,7 +39,7 @@ namespace MeetTheTeacher.Logic
 		}
 		public virtual string GetTeacherHtmlRow()
 		{
-			return $"<td align=\"left\">{Name}</td>";
+			return $"<tr><td align=\"left\">{Name,-30}</td><td align=\"left\">{_day,-12}</td><td align=\"left\">{_time,-18}</td><td align=\"left\">{_room,-10}</td></tr>";
 		}
 		public int CompareTo(Object other)
 		{
@@ -48,11 +48,12 @@ namespace MeetTheTeacher.Logic
 				throw new NullReferenceException($"{nameof(other)} ist kein Lehrer");
 			}
 			Teacher otherTeacher = other as Teacher;
-			return this.Name.ToLower().CompareTo(otherTeacher.Name.ToLower());
+			return Name.ToLower().CompareTo(otherTeacher.Name.ToLower());
+			//return otherTeacher.Name.ToLower().CompareTo(Name.ToLower()); 
 		}
 		public override string ToString()
 		{
-			return $"{Name} {_day} {_hour} {_time} {_room}";
+			return $"|{Name,-30}|{_day,-12}|{_hour,-12}|{_time,-18}|{_room,-10}|";
 		}
 	}
 }

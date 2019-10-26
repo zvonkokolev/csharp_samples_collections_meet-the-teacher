@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Utils;
 
 namespace MeetTheTeacher.Logic
 {
@@ -110,7 +111,7 @@ namespace MeetTheTeacher.Logic
 			foreach (Teacher teacher in Teachers)
 			{
 				++check;
-				if(teacher.Name.ToLower() == teacherName.ToLower())
+				if (teacher.Name.ToLower() == teacherName.ToLower())
 				{
 					break;
 				}
@@ -141,12 +142,23 @@ namespace MeetTheTeacher.Logic
 		/// <returns>Text für die Html-Tabelle</returns>
 		public string GetHtmlTable()
 		{
-			Teachers.Sort();
+			string pathToInputFiles = MyFile.GetFullFolderNameInApplicationTree("Input");
+			const string ignoredTeachersFileName = "IgnoredTeachers.csv";
+			string[] ignoredNames = File.ReadAllLines(Path.Combine(pathToInputFiles, ignoredTeachersFileName), Encoding.UTF8);
+			DeleteIgnoredTeachers(ignoredNames);
+			//Will sort from second element, to the list length, by default comparer
+			Teachers.Sort(1, Teachers.Count - 1, null);
 			StringBuilder sb = new StringBuilder();
+			string body = "<!doctype html><html lang=\"de\"><head><meta charset=\"utf-8\"><title>LEHRERLISTE</title></head><body><table>\n";
+			//Feste Spaltenformatierung
+			//<colgroup><col width=\"300\"><col width=\"120\"><col width=\"180\"><col width=\"100\"></colgroup>
+			sb.Append(body);
 			foreach (Teacher teacher in Teachers)
 			{
-				sb.AppendLine(teacher.GetHtmlForName());
+				sb.AppendLine(teacher.GetTeacherHtmlRow());
 			}
+			string end = "</tr></table></body></html>";
+			sb.AppendLine(end);
 			return sb.ToString();
 		}
 	}

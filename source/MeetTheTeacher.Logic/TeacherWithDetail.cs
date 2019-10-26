@@ -25,7 +25,7 @@ namespace MeetTheTeacher.Logic
 		}
 		public override string GetTeacherHtmlRow()
 		{
-			return $"<td align=\"left\"><a href=\"?id={_id}\">{Name}</a></td>";
+			return GetTeacherHtmlRow();
 		}
 	}
 }
