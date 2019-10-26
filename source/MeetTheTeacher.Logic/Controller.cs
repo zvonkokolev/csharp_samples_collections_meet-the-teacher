@@ -58,7 +58,7 @@ namespace MeetTheTeacher.Logic
 		{
 			Teachers = new List<Teacher>();
 			foreach (string line in lines)
-			{			
+			{
 				string[] part = new string[6];
 				part = line.Split(';');
 				if (Details.ContainsKey(part[0]))
@@ -139,7 +139,7 @@ namespace MeetTheTeacher.Logic
 			{
 				string[] part = new string[2];
 				part = line.Split(';');
-				Details.TryAdd(part[0], int.Parse(part[1]));
+				Details.TryAdd(part[0], int.Parse(part[1]));	//ToUpper
 				CountTeachersWithDetails++;
 			}
 		}

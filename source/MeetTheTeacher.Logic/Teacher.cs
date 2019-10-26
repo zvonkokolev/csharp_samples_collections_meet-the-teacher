@@ -48,7 +48,7 @@ namespace MeetTheTeacher.Logic
 				throw new NullReferenceException($"{nameof(other)} ist kein Lehrer");
 			}
 			Teacher otherTeacher = other as Teacher;
-			return Name.ToLower().CompareTo(otherTeacher.Name.ToLower());
+			return Name.ToUpper().CompareTo(otherTeacher.Name.ToUpper());
 			//return otherTeacher.Name.ToLower().CompareTo(Name.ToLower()); 
 		}
 		//public override string ToString()
