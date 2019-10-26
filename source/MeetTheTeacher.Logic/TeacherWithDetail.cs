@@ -23,9 +23,5 @@ namespace MeetTheTeacher.Logic
 		{
 			return $"<a href=\"?id={_id}\">{Name}</a>";
 		}
-		public override string GetTeacherHtmlRow()
-		{
-			return GetTeacherHtmlRow();
-		}
 	}
 }

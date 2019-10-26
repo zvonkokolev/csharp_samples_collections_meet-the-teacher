@@ -58,11 +58,19 @@ namespace MeetTheTeacher.Logic
 		{
 			Teachers = new List<Teacher>();
 			foreach (string line in lines)
-			{
-				string[] part = new string[5];
+			{			
+				string[] part = new string[6];
 				part = line.Split(';');
-				Teacher teacher = new Teacher(part[0], part[1], part[2], part[3], part[4]);
-				Teachers.Add(teacher);
+				if (Details.ContainsKey(part[0]))
+				{
+					Teacher teacherWithDetail = new TeacherWithDetail(part[0], part[1], part[2], part[3], part[4], Details[part[0]]);
+					Teachers.Add(teacherWithDetail);
+				}
+				else
+				{
+					Teacher teacher = new Teacher(part[0], part[1], part[2], part[3], part[4]);
+					Teachers.Add(teacher);
+				}
 				Count++;
 			}
 		}

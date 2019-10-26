@@ -37,9 +37,9 @@ namespace MeetTheTeacher.Logic
 		{
 			return Name;
 		}
-		public virtual string GetTeacherHtmlRow()
+		public string GetTeacherHtmlRow()
 		{
-			return $"<tr><td align=\"left\">{Name,-30}</td><td align=\"left\">{_day,-12}</td><td align=\"left\">{_time,-18}</td><td align=\"left\">{_room,-10}</td></tr>";
+			return $"<tr><td align=\"left\">{GetHtmlForName()}</td><td align=\"left\">{_day,-12}</td><td align=\"left\">{_time,-18}</td><td align=\"left\">{_room,-10}</td></tr>";
 		}
 		public int CompareTo(Object other)
 		{
@@ -51,9 +51,9 @@ namespace MeetTheTeacher.Logic
 			return Name.ToLower().CompareTo(otherTeacher.Name.ToLower());
 			//return otherTeacher.Name.ToLower().CompareTo(Name.ToLower()); 
 		}
-		public override string ToString()
-		{
-			return $"|{Name,-30}|{_day,-12}|{_hour,-12}|{_time,-18}|{_room,-10}|";
-		}
+		//public override string ToString()
+		//{
+		//	return $"|{Name,-30}|{_day,-12}|{_hour,-12}|{_time,-18}|{_room,-10}|";
+		//}
 	}
 }
