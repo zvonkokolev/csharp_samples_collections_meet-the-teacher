@@ -3,17 +3,13 @@
 
 ## Lehrziele
 
-*	Wiederholung Objektorientierung
+*	Wiederholung Objektorientierung              :ballot_box_with_check:
 *	Abgeleitete Klassen
 *	Überschriebene Methoden
 *	Collections: `List<T>`, `Dictionary<K,V>`
 *	`IComparable<T>`
 
 Es ist eine Konsolenanwendung zu realisieren, die aus drei Textdateien im CSV-Format (Codierung: UTF-8) die HTML-Sprechstundentabelle für die Homepage der HTL-Leonding erzeugt:
-
-
- ![Übersicht](./images/overview-html.png)
-
 
 Folgende Zusammenhänge sind zu berücksichtigen:
 
@@ -37,11 +33,6 @@ Folgende Zusammenhänge sind zu berücksichtigen:
   * In der Html-Ausgabe sind die Sonderzeichen in den Namen der Lehrer im HTML-Format zu codieren. Dazu gibt es die Hilfsmethode `HtmlEncode(string)` in der Klasse `WebUtility`
 
 * Eine Klasse Controller.cs steuert den gesamten Ablauf und verwaltet in Collections die erforderlichen Listen.
-
-
-# Klassendiagramm
- 
-![Klassendiagramm](./images/class-diagram.png)
 
 # Konsolenprogramm
 
