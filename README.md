@@ -1,6 +1,4 @@
-# Meet the Teacher
-
-## Lehrziele
+### Meet the Teacher
 
 *	Wiederholung Objektorientierung              :ballot_box_with_check:
 *	Abgeleitete Klassen                          :ballot_box_with_check:
@@ -13,5 +11,5 @@ Es ist eine Konsolenanwendung zu realisieren, die aus drei Textdateien im CSV-Fo
 
 Meine Ausgabe:
 
-![Exemplarische Ausgabe](./images/sample-output.png)
+![Meine Ausgabe](./images/myOutPut.png)
 
