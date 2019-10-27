@@ -157,7 +157,7 @@ namespace MeetTheTeacher.Logic
 			//Will sort from second element, to the list length, by default comparer
 			Teachers.Sort(1, Teachers.Count - 1, null);
 			StringBuilder sb = new StringBuilder();
-			string body = "<!doctype html><html lang=\"de\"><head><meta charset=\"utf-8\"><title>LEHRERLISTE</title></head><body><table>\n";
+			string body = "<!doctype html>\n<html lang=\"de\">\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title>LEHRERLISTE</title>\n\t</head>\n\t<body>\n\t\t<table>\n";
 			//Feste Spaltenformatierung
 			//<colgroup><col width=\"300\"><col width=\"120\"><col width=\"180\"><col width=\"100\"></colgroup>
 			sb.Append(body);
@@ -165,7 +165,7 @@ namespace MeetTheTeacher.Logic
 			{
 				sb.AppendLine(teacher.GetTeacherHtmlRow());
 			}
-			string end = "</tr></table></body></html>";
+			string end = "\t\t</table>\n\t</body>\n</html>\n";
 			sb.AppendLine(end);
 			return sb.ToString();
 		}

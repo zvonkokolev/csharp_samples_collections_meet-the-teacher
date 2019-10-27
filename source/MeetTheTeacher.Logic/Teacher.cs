@@ -36,7 +36,7 @@ namespace MeetTheTeacher.Logic
 		}
 		public string GetTeacherHtmlRow()
 		{
-			return $"<tr><td align=\"left\">{GetHtmlForName()}</td><td align=\"left\">{_day,-12}</td><td align=\"left\">{_time,-18}</td><td align=\"left\">{_room,-10}</td></tr>";
+			return $"\t\t\t<tr>\n\t\t\t\t<td align=\"left\">{GetHtmlForName()}</td>\n\t\t\t\t<td align=\"left\">{_day}</td>\n\t\t\t\t<td align=\"left\">{_time}</td>\n\t\t\t\t<td align=\"left\">{_room}</td>\n\t\t\t</tr>\n";
 		}
 		public int CompareTo(Object other)
 		{
