@@ -133,13 +133,13 @@ namespace MeetTheTeacher.Logic
 		/// derartige Seite haben einlesen.
 		/// </summary>
 		public void InitDetails(string[] lines)
-		{	// GrOsS KlEiN schreibung ignorieren
+		{																// GrOsS KlEiN schreibung ignorieren
 			Details = new Dictionary<string, int>(StringComparer.InvariantCultureIgnoreCase);
 			foreach (string line in lines)
 			{
 				string[] part = new string[2];
 				part = line.Split(';');
-				Details.TryAdd(part[0], int.Parse(part[1]));	//ToUpper
+				Details.TryAdd(part[0], int.Parse(part[1]));
 				CountTeachersWithDetails++;
 			}
 		}

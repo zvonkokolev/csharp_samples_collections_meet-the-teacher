@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
 
 namespace MeetTheTeacher.Logic
 {
@@ -20,7 +17,7 @@ namespace MeetTheTeacher.Logic
 		public string Name { get; set; }
 		//constructors
 		public Teacher(string name, string tag, string stunden,  string zeit, string raum)
-		{
+		{ 
 			Name = name;
 			_day = tag;
 			_hour = stunden;
@@ -49,7 +46,7 @@ namespace MeetTheTeacher.Logic
 			}
 			Teacher otherTeacher = other as Teacher;
 			return Name.ToUpper().CompareTo(otherTeacher.Name.ToUpper());
-			//return otherTeacher.Name.ToLower().CompareTo(Name.ToLower()); 
+			//return otherTeacher.Name.ToLower().CompareTo(Name.ToLower()); absteigend sortieren
 		}
 		//public override string ToString()
 		//{

@@ -26,19 +26,13 @@ namespace MeetTheTeacher.UI
 			string[] detailLines = File.ReadAllLines(Path.Combine(pathToInputFiles, detailsFileName), Encoding.UTF8);
 			string[] ignoredNames = File.ReadAllLines(Path.Combine(pathToInputFiles, ignoredTeachersFileName), Encoding.UTF8);
 
-			////Umwandeln in GROSSBUCHSTABEN
-			//string[] kapitalLetter = new string[detailLines.Length];
-			//int index = 0;
-			//foreach (var item in detailLines)
-			//{
-			//	string[] newDetailLines = new string[2];
-			//	newDetailLines = item.Split(';');
-			//	kapitalLetter.SetValue(newDetailLines[0].ToUpper() + ';' + newDetailLines[1], index++);
-			//}//Warum funktioniert nicht???
-
 			Controller ctrl = new Controller(teacherLines, detailLines);
 
 			string html = ctrl.GetHtmlTable();
+			Console.WriteLine("Hier ist der HTML CODE !!!");
+			Console.WriteLine();
+			Console.WriteLine();
+			Console.WriteLine(html);
 			File.WriteAllText(Path.Combine(pathToOutputFiles, resultFileName), html, Encoding.Default);
 		}
 	}
