@@ -133,8 +133,8 @@ namespace MeetTheTeacher.Logic
 		/// derartige Seite haben einlesen.
 		/// </summary>
 		public void InitDetails(string[] lines)
-		{
-			Details = new Dictionary<string, int>();
+		{	// GrOsS KlEiN schreibung ignorieren
+			Details = new Dictionary<string, int>(StringComparer.InvariantCultureIgnoreCase);
 			foreach (string line in lines)
 			{
 				string[] part = new string[2];

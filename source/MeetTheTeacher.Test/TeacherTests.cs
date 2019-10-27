@@ -26,7 +26,7 @@ namespace MeetTheTeacher.Test
             // Act
             string html = teacher.GetHtmlForName();
             // Assert
-            Assert.AreEqual("<a href=\"?id=999\">TeacherA</a>", html);
+            Assert.AreEqual("<a href=\"https://www.htl-leonding.at/kontakt/lehrer-innen/visitenkarte/?id=999\">TeacherA</a>", html);
         }
     }
 }

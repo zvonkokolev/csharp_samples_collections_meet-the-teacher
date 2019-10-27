@@ -21,7 +21,7 @@ namespace MeetTheTeacher.Logic
 		}
 		public override string GetHtmlForName()
 		{
-			return $"<a href=\"?id={_id}\">{Name}</a>";
+			return $"<a href=\"https://www.htl-leonding.at/kontakt/lehrer-innen/visitenkarte/?id={_id}\">{Name}</a>";
 		}
 	}
 }
